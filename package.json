@@ -1,6 +1,6 @@
 {
   "name": "tsdot",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "The fastest + concise javascript template engine for Node.js and browsers.",
   "license": "MIT",
   "author": "Carlo Taleon",
