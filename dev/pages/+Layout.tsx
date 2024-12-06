@@ -1,6 +1,19 @@
-import { createSignal, type FlowProps } from "solid-js";
+import { type FlowProps } from "solid-js";
+import { useMetadata } from "vike-metadata-solid";
 import { Head } from "vike-solid/Head";
 import { usePageContext } from "vike-solid/usePageContext";
+import getTitle from "../utils/get-title";
+
+import "@/styles/app.css";
+
+useMetadata.setGlobalDefaults({
+  title: getTitle("Home"),
+  description: "Roll your own auth with the Lucia book with super easy to copy examples.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+});
 
 export default function RootLayout(props: FlowProps) {
   const pageContext = usePageContext();
@@ -17,22 +30,11 @@ export default function RootLayout(props: FlowProps) {
         <nav>
           <a href="/">Home</a>
           <span>{" | "}</span>
-          <a href="/dashboard">Dashboard</a>
+          <a href="/demo">Demo</a>
           <span>{" | "}</span>
-          <Counter />
         </nav>
         {props.children}
       </div>
     </>
-  );
-}
-
-function Counter() {
-  const [count, setCount] = createSignal(0);
-
-  return (
-    <button type="button" onClick={() => setCount((count) => count + 1)}>
-      Root Counter {count()}
-    </button>
   );
 }
