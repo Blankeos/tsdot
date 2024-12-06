@@ -1,16 +1,16 @@
 ![dot.js](_docs/banner.png)
 
-<h1 align="center">dot.js</h1>
+<h1 align="center">dot.ts</h1>
 
 <div align="center">
-        <a href="https://www.npmjs.com/package/dot.js" target="_blank">
-          <img src="https://img.shields.io/npm/dw/dot.js?style=for-the-badge" alt="NPM Downloads"></img></a>
-        <img src="https://img.shields.io/bundlephobia/minzip/dot.js?style=for-the-badge" alt="NPM Bundle Size" ></img>
+        <a href="https://www.npmjs.com/package/dot.ts" target="_blank">
+          <img src="https://img.shields.io/npm/dw/dot.ts?style=for-the-badge" alt="NPM Downloads"></img></a>
+        <img src="https://img.shields.io/bundlephobia/minzip/dot.ts?style=for-the-badge" alt="NPM Bundle Size" ></img>
           <img src="https://img.shields.io/badge/maintained%20with-bun-cc00ff.svg?style=for-the-badge&logo=bun)](https://bun.sh/" alt="Bun"></img>
     <img src="https://img.shields.io/npm/l/vike-metadata-react?style=for-the-badge" alt="NPM License"></img>
 </div>
 
-dot.js is a template engine for JavaScript. It is similar to Mustache, EJS, Handlebars, and many others. This is a fork of the original [doT.js](https://github.com/olado/doT) template engine.
+dot.ts is a template engine for JavaScript. It is similar to Mustache, EJS, Handlebars, and many others. This is a fork of the original [doT.js](https://github.com/olado/doT) template engine.
 
 ## Features
 
@@ -30,14 +30,14 @@ The only new changes after the fork are:
 ### JS/TS Projects
 
 ```sh
-npm install dot.js
+npm install dot.ts
 ```
 
 ### Browser-only
 
 ```html
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/dot.js@latest/dist/index.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dot.ts@latest/dist/index.global.js"></script>
 </head>
 ```
 
@@ -46,7 +46,7 @@ npm install dot.js
 ### JS/TS Projects
 
 ```ts
-import dotjs from "dot.js";
+import dotjs from "dot.ts";
 
 const template = `
   <div class="container">
