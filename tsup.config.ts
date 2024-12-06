@@ -7,7 +7,7 @@ export default defineConfig({
   /**
    * So index.global.js (iife), can be used in the browser.
    */
-  globalName: "dotjs",
+  globalName: "tsdot",
   dts: true,
   splitting: true,
   sourcemap: true,

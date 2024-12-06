@@ -1,5 +1,5 @@
 {
-  "name": "dot.ts",
+  "name": "tsdot",
   "version": "1.1.4",
   "description": "The fastest + concise javascript template engine for Node.js and browsers.",
   "license": "MIT",
