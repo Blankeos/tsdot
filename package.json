@@ -4,6 +4,13 @@
   "description": "The fastest + concise javascript template engine for Node.js and browsers.",
   "license": "MIT",
   "author": "Carlo Taleon",
+  "contributors": [
+    {
+      "name": "Laura Doktorova",
+      "email": "ldoktorova@gmail.com",
+      "url": "https://github.com/olado"
+    }
+  ],
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -12,8 +19,9 @@
     "dev": "vite serve dev",
     "build": "tsup",
     "build:site": "vite build dev",
-    "lint": "prettier --check .; eslint .",
-    "lint:fix": "prettier --write .; eslint --fix .",
+    "ci": "bun run lint && bun run build",
+    "publish": "bun run lint && bun run build && changeset publish",
+    "lint": "tsc",
     "format": "prettier --write .",
     "update": "bunx npm-check-updates --interactive --format group"
   },
