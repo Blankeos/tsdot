@@ -23,7 +23,7 @@
     "build": "tsup",
     "build:site": "vite build dev",
     "ci": "bun run lint && bun run build",
-    "publish": "bun run lint && bun run build && changeset publish",
+    "publish-pkg": "bun run lint && bun run build && changeset publish",
     "lint": "tsc",
     "format": "prettier --write .",
     "update": "bunx npm-check-updates --interactive --format group"
