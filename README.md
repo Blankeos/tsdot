@@ -1,4 +1,4 @@
-![dot.js](_docs/banner.png)
+![dot.js](https://raw.githubusercontent.com/Blankeos/tsdot/refs/heads/main/_docs/banner.png)
 
 <h1 align="center">tsdot</h1>
 
