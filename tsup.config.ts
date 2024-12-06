@@ -4,10 +4,6 @@ export default defineConfig({
   entry: ["src/index.ts"],
   outDir: "dist",
   format: ["cjs", "esm", "iife"],
-  /**
-   * So index.global.js (iife), can be used in the browser.
-   */
-  globalName: "tsdot",
   dts: true,
   splitting: true,
   sourcemap: true,

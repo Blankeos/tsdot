@@ -35,26 +35,25 @@
   <script type="text/javascript">
     // console.log("loaded", boomer);
     document.getElementById("h1").addEventListener("click", () => {
-      console.log("nice");
-      console.log("clicked?", doT);
+      console.log("clicked?", tsdot);
     });
-    // var def = {
-    //   header: document.getElementById("headertmpl").text,
-    //   customheader: document.getElementById("customizableheadertmpl").text,
-    // };
-    // var data = {
-    //   title: "My title",
-    //   name: "My name",
-    // };
+    var def = {
+      header: document.getElementById("headertmpl").text,
+      customheader: document.getElementById("customizableheadertmpl").text,
+    };
+    var data = {
+      title: "My title",
+      name: "My name",
+    };
 
-    // var pagefn = Dot.template(document.getElementById("pagetmpl").text, undefined, def);
-    // document.getElementById("content").innerHTML = pagefn(data);
+    var pagefn = tsdot.template(document.getElementById("pagetmpl").text, undefined, def);
+    document.getElementById("content").innerHTML = pagefn(data);
 
-    // pagefn = Dot.template(
-    //   document.getElementById("pagetmplwithcustomizableheader").text,
-    //   undefined,
-    //   def
-    // );
-    // document.getElementById("contentcustom").innerHTML = pagefn(data);
+    pagefn = tsdot.template(
+      document.getElementById("pagetmplwithcustomizableheader").text,
+      undefined,
+      def
+    );
+    document.getElementById("contentcustom").innerHTML = pagefn(data);
   </script>
 </html>

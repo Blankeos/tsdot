@@ -29,8 +29,8 @@ declare global {
 }
 
 export default class Dot {
-  static name = "doT2";
-  static version = "1.1.3";
+  static name = "tsdot";
+  static version = "1.1.6";
   static templateSettings: TemplateSettings = {
     evaluate: /\{\{([\s\S]+?(\}?)+)\}\}/g,
     interpolate: /\{\{=([\s\S]+?)\}\}/g,
@@ -227,4 +227,9 @@ export default class Dot {
   static compile(tmpl: string, def?: {}) {
     return Dot.template(tmpl, null, def);
   }
+}
+
+// Ensure Dot is available globally
+if (typeof window !== "undefined") {
+  (window as any).tsdot = Dot;
 }
