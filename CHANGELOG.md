@@ -1,5 +1,11 @@
 # dot.js
 
+## 1.1.5
+
+### Patch Changes
+
+- d1bd804: chore: Removed other files besides dist in publish.
+
 ## 1.1.4
 
 ### Patch Changes
