@@ -50,7 +50,7 @@ import tsdot from "tsdot";
 
 const template = `
   <div class="container">
-    <h1>Hello, {{ name }}!</h1>
+    <h1>Hello, {{=it.name}}!</h1>
   </div>
 `;
 
@@ -72,7 +72,7 @@ const result = compiledTemplate({ name: "World" });
   <script>
     const template = `
         <div class="container">
-          <h1>Hello, {{ name }}!</h1>
+          <h1>Hello, {{=it.name}}!</h1>
         </div>
       `;
 
