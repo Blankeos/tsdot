@@ -10,7 +10,7 @@ export default defineConfig([
     splitting: true,
     sourcemap: true,
     clean: true,
-    // minify: true,
+    minify: true,
   },
   // Browser Build
   {
@@ -23,6 +23,6 @@ export default defineConfig([
     splitting: true,
     sourcemap: true,
     clean: false,
-    // minify: true,
+    minify: true,
   },
 ]);
