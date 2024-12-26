@@ -1,5 +1,15 @@
 # dot.js
 
+## 1.1.7
+
+### Patch Changes
+
+- [`35b11cc`](https://github.com/Blankeos/tsdot/commit/35b11ccd56a3e44d2f8c9dbfc2535dd778b24b46) Thanks [@Blankeos](https://github.com/Blankeos)! - test: Added playwright and bun test runners for browser installs.
+
+- [`35b11cc`](https://github.com/Blankeos/tsdot/commit/35b11ccd56a3e44d2f8c9dbfc2535dd778b24b46) Thanks [@Blankeos](https://github.com/Blankeos)! - chore: Updated workflows to always check for browser installs.
+
+- [`35b11cc`](https://github.com/Blankeos/tsdot/commit/35b11ccd56a3e44d2f8c9dbfc2535dd778b24b46) Thanks [@Blankeos](https://github.com/Blankeos)! - feat: Added non-polluting script.
+
 ## 1.1.6
 
 ### Patch Changes
