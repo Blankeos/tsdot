@@ -14,7 +14,9 @@ export default defineConfig([
   },
   // Browser Build
   {
-    entry: ["src/browser.ts"],
+    entry: {
+      index: "src/browser.ts",
+    },
     outDir: "dist",
     format: ["iife"],
     dts: true,

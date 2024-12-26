@@ -3,10 +3,7 @@ import { readFileSync } from "fs";
 import { Browser } from "happy-dom";
 import path from "path";
 
-const browserScript = readFileSync(
-  path.resolve(__dirname, "../../dist/browser.global.js"),
-  "utf-8"
-);
+const browserScript = readFileSync(path.resolve(__dirname, "../../dist/index.global.js"), "utf-8");
 
 describe("tsdot - Browser Usage", () => {
   it("window.tsdot is defined.", () => {

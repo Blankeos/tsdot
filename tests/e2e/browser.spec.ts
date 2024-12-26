@@ -8,10 +8,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const browserScript = readFileSync(
-  path.resolve(__dirname, "../../dist/browser.global.js"),
-  "utf-8"
-);
+const browserScript = readFileSync(path.resolve(__dirname, "../../dist/index.global.js"), "utf-8");
 
 test.describe("tsdot - Browser Usage (Playwright)", () => {
   test("window.tsdot is defined", async ({ page }) => {
