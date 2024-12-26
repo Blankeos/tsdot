@@ -28,7 +28,7 @@ declare global {
   }
 }
 
-export default class Dot {
+export default class tsdot {
   static name = "tsdot";
   static version = "1.1.6";
   static templateSettings: TemplateSettings = {
@@ -52,7 +52,7 @@ export default class Dot {
   // compile: undefined; //fn, for express
 
   static _globals: any = (function () {
-    return Dot || (0, eval)("this");
+    return tsdot || (0, eval)("this");
   })();
 
   static encodeHTMLSource(doNotSkipEncoded?: boolean): (input: string) => string {
@@ -85,7 +85,7 @@ export default class Dot {
 
   static resolveDefs(c: TemplateSettings, block: string | Function, def: Record<string, any>) {
     return (typeof block === "string" ? block : block.toString())
-      .replace(c.define || Dot.skip, function (m: any, code: any, assign: any, value: any) {
+      .replace(c.define || tsdot.skip, function (m: any, code: any, assign: any, value: any) {
         if (code.indexOf("def.") === 0) {
           code = code.substring(4);
         }
@@ -102,7 +102,7 @@ export default class Dot {
         }
         return "";
       })
-      .replace(c.use || Dot.skip, function (m: any, code: any): any {
+      .replace(c.use || tsdot.skip, function (m: any, code: any): any {
         if (c.useParams)
           code = code.replace(c.useParams, function (m: any, s: any, d: any, param: any) {
             if (def[d] && def[d].arg && param) {
@@ -116,7 +116,7 @@ export default class Dot {
             }
           });
         var v = new Function("def", "return " + code)(def);
-        return v ? Dot.resolveDefs(c, v, def) : v;
+        return v ? tsdot.resolveDefs(c, v, def) : v;
       });
   }
 
@@ -125,12 +125,12 @@ export default class Dot {
   }
 
   static template<T>(tmpl: string, c?: TemplateSettings | null, def?: {}): RenderFunction<T> {
-    c = c || Dot.templateSettings;
-    var cse = c.append ? Dot.startend.append : Dot.startend.split,
+    c = c || tsdot.templateSettings;
+    var cse = c.append ? tsdot.startend.append : tsdot.startend.split,
       needhtmlencode,
       sid = 0,
       indv,
-      str = c.use || c.define ? Dot.resolveDefs(c, tmpl, def || {}) : tmpl;
+      str = c.use || c.define ? tsdot.resolveDefs(c, tmpl, def || {}) : tmpl;
 
     str = (
       "var out='" +
@@ -141,14 +141,14 @@ export default class Dot {
         : str
       )
         .replace(/'|\\/g, "\\$&")
-        .replace(c.interpolate || Dot.skip, function (m: any, code: any) {
+        .replace(c.interpolate || tsdot.skip, function (m: any, code: any) {
           return cse.start + unescape(code) + cse.end;
         })
-        .replace(c.encode || Dot.skip, function (m: any, code: any) {
+        .replace(c.encode || tsdot.skip, function (m: any, code: any) {
           needhtmlencode = true;
           return cse.startencode + unescape(code) + cse.end;
         })
-        .replace(c.conditional || Dot.skip, function (m: any, elsecase: any, code: any) {
+        .replace(c.conditional || tsdot.skip, function (m: any, elsecase: any, code: any) {
           return elsecase
             ? code
               ? "';}else if(" + unescape(code) + "){out+='"
@@ -157,7 +157,7 @@ export default class Dot {
               ? "';if(" + unescape(code) + "){out+='"
               : "';}out+='";
         })
-        .replace(c.iterate || Dot.skip, function (m: any, iterate: any, vname: any, iname: any) {
+        .replace(c.iterate || tsdot.skip, function (m: any, iterate: any, vname: any, iname: any) {
           if (!iterate) return "';} } out+='";
           sid += 1;
           indv = iname || "i" + sid;
@@ -190,7 +190,7 @@ export default class Dot {
             "+=1];out+='"
           );
         })
-        .replace(c.evaluate || Dot.skip, function (m: any, code: any) {
+        .replace(c.evaluate || tsdot.skip, function (m: any, code: any) {
           return "';" + unescape(code) + "out+='";
         }) +
       "';return out;"
@@ -203,11 +203,11 @@ export default class Dot {
     //.replace(/(\s|;|\}|^|\{)out\+=''\+/g,'$1out+=');
 
     if (needhtmlencode) {
-      if (!c.selfcontained && Dot._globals && !Dot._globals._encodeHTML)
-        Dot._globals._encodeHTML = Dot.encodeHTMLSource(c.doNotSkipEncoded);
+      if (!c.selfcontained && tsdot._globals && !tsdot._globals._encodeHTML)
+        tsdot._globals._encodeHTML = tsdot.encodeHTMLSource(c.doNotSkipEncoded);
       str =
         "var encodeHTML = typeof _encodeHTML !== 'undefined' ? _encodeHTML : (" +
-        Dot.encodeHTMLSource.toString() +
+        tsdot.encodeHTMLSource.toString() +
         "(" +
         (c.doNotSkipEncoded || "") +
         "));" +
@@ -225,11 +225,6 @@ export default class Dot {
   }
 
   static compile(tmpl: string, def?: {}) {
-    return Dot.template(tmpl, null, def);
+    return tsdot.template(tmpl, null, def);
   }
-}
-
-// Ensure Dot is available globally
-if (typeof window !== "undefined") {
-  (window as any).tsdot = Dot;
 }
