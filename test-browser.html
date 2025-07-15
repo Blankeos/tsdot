@@ -23,7 +23,7 @@
       {{#def.customheader}}
       {{=it.name}}
     </script>
-    <script type="text/javascript" src="dist/index.global.js"></script>
+    <script type="text/javascript" src="dist/browser.global.js"></script>
   </head>
 
   <body>
@@ -33,7 +33,7 @@
   </body>
 
   <script type="text/javascript">
-    // console.log("loaded", boomer);
+    console.log("loaded", window);
     document.getElementById("h1").addEventListener("click", () => {
       console.log("clicked?", tsdot);
     });
