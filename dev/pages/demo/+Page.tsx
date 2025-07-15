@@ -18,9 +18,10 @@ export default function DemoPage() {
     title: getTitle("Demo"),
   });
 
-  const [selectedDemoValue, setSelectedValueDemo] = createSignal<{ value: string; label: string }>(
-    null
-  );
+  const [selectedDemoValue, setSelectedValueDemo] = createSignal<{
+    value: string;
+    label: string;
+  } | null>(null);
 
   const [values, setValues] = createStore({
     template: "",
