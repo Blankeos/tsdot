@@ -1,5 +1,13 @@
 # dot.js
 
+## 1.1.8
+
+### Patch Changes
+
+- [#7](https://github.com/Blankeos/tsdot/pull/7) [`4a70591`](https://github.com/Blankeos/tsdot/commit/4a70591299aa1252335b7b70c6420be9815260d7) Thanks [@Blankeos](https://github.com/Blankeos)! - feat: added minify so the bundle size is smaller.
+
+- [#7](https://github.com/Blankeos/tsdot/pull/7) [`4a70591`](https://github.com/Blankeos/tsdot/commit/4a70591299aa1252335b7b70c6420be9815260d7) Thanks [@Blankeos](https://github.com/Blankeos)! - docs: better docs and examples.
+
 ## 1.1.7
 
 ### Patch Changes
