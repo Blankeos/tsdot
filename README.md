@@ -94,10 +94,10 @@ const result = compiledTemplate({ name: "World" });
 
 > I think each of these need examples.
 
-```sh
+```
 {{  }} - evaluation
 {{=  }} - interpolation
-{{! }} - interpolation with encoding
+{{! }} - interpolation with encoding # Does not work it seems.
 {{# }} - compile-time evaluation/includes and partials
 {{## #}} - compile-time defines
 {{? }} - conditionals
