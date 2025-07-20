@@ -1,5 +1,13 @@
 # dot.js
 
+## 1.1.9
+
+### Patch Changes
+
+- [`39730b0`](https://github.com/Blankeos/tsdot/commit/39730b054e68ff81ec1a641b71a76e67549097c2) Thanks [@Blankeos](https://github.com/Blankeos)! - fix: partial typings for doT.template() options.
+
+- [`39730b0`](https://github.com/Blankeos/tsdot/commit/39730b054e68ff81ec1a641b71a76e67549097c2) Thanks [@Blankeos](https://github.com/Blankeos)! - docs: strip doesn't remove \n (useful for code formatted stuff).
+
 ## 1.1.8
 
 ### Patch Changes
