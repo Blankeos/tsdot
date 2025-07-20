@@ -40,9 +40,7 @@ export default function DemoPage() {
 
     try {
       // 1. Compile the template
-      const templateFunction = doT.template<TemplateData>(values.template, {
-        strip: false, // So that escape chars are preserved (i.e. spacing between lines and also indents)
-      });
+      const templateFunction = doT.template<TemplateData>(values.template);
 
       // 2. Parse the data
       let parsedData: TemplateData;
