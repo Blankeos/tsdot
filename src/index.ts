@@ -124,13 +124,17 @@ export default class tsdot {
     return code.replace(/\\('|\\)/g, "$1").replace(/[\r\t\n]/g, " ");
   }
 
-  static template<T>(tmpl: string, c?: TemplateSettings | null, def?: {}): RenderFunction<T> {
+  static template<T>(
+    tmpl: string,
+    c?: Partial<TemplateSettings> | null,
+    def?: {}
+  ): RenderFunction<T> {
     c = c || tsdot.templateSettings;
     var cse = c.append ? tsdot.startend.append : tsdot.startend.split,
       needhtmlencode,
       sid = 0,
       indv,
-      str = c.use || c.define ? tsdot.resolveDefs(c, tmpl, def || {}) : tmpl;
+      str = c.use || c.define ? tsdot.resolveDefs(c as TemplateSettings, tmpl, def || {}) : tmpl;
 
     str = (
       "var out='" +
